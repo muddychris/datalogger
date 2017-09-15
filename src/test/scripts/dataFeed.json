@@ -1,0 +1,8 @@
+{"captureDate":"2017-09-01 02:34:56","location":"LMP",
+"dataList":[
+{"name":"internal","dataType":"temp","value":"22.0"},
+{"name":"external","dataType":"temp","value":"28.0"},
+{"name":"pool","dataType":"temp","value":"26.0"},
+{"name":"internal","dataType":"humidity","value":"47"},
+{"name":"external","dataType":"humidity","value":"33.0"}
+]}
