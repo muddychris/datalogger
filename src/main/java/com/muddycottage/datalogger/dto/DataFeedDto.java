@@ -16,7 +16,7 @@ public class DataFeedDto {
 	private final Logger logger = LoggerFactory.getLogger(DataFeedDto.class) ;
 	
 	@JsonDeserialize(using = JsonDataDeserialiser.class)
-	private LocalDateTime captureDate ;
+	private LocalDateTime captureDateTime ;
 	
 	private String location ;
 
@@ -24,19 +24,19 @@ public class DataFeedDto {
 	
 	public DataFeedDto () {}
 
-	public DataFeedDto(LocalDateTime captureDate, String location, List<DataItemDto> dataList) {
+	public DataFeedDto(LocalDateTime captureDateTime, String location, List<DataItemDto> dataList) {
 		super();
-		this.captureDate = captureDate;
+		this.captureDateTime = captureDateTime;
 		this.location = location;
 		this.dataList = dataList ;
 	}
 
-	public LocalDateTime getCaptureDate() {
-		return captureDate;
+	public LocalDateTime getCaptureDateTime() {
+		return captureDateTime;
 	}
 
-	public void setCaptureDate(LocalDateTime captureDate) {
-		this.captureDate = captureDate;
+	public void setCaptureDateTime(LocalDateTime captureDateTime) {
+		this.captureDateTime = captureDateTime;
 	}
 
 	public String getLocation() {

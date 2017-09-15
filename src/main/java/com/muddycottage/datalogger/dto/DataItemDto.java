@@ -2,15 +2,15 @@ package com.muddycottage.datalogger.dto;
 
 public class DataItemDto {
 	private String name ;
-	private String dataType ;
+	private String type ;
 	private float value ;
 	
 	public DataItemDto() {}
 	
-	public DataItemDto(String name, String dataType, float value) {
+	public DataItemDto(String name, String type, float value) {
 		super();
 		this.name = name;
-		this.dataType = dataType;
+		this.type = type ;
 		this.value = value;
 	}
 
@@ -22,12 +22,12 @@ public class DataItemDto {
 		this.name = name;
 	}
 
-	public String getDataType() {
-		return dataType;
+	public String getType() {
+		return type;
 	}
 
-	public void setDataType(String dataType) {
-		this.dataType = dataType;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public float getValue() {
