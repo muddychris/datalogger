@@ -33,6 +33,8 @@ public class DataItem {
 	@Column(name = "data_value")
 	private float value ;
 	
+	public DataItem () {} 
+	
 	public DataItem (DataFeedDto dataFeedDto, DataItemDto  dataItemDto) {
 		this.captureDateTime = dataFeedDto.getCaptureDateTime() ;
 		this.location = dataFeedDto.getLocation() ;

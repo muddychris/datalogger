@@ -27,8 +27,6 @@ public class DataFeedController {
 
 		logger.info("datafeed called");
 		
-		dataFeedService = new DataFeedService() ; // TODO
-		
 		dataFeedService.processDataFeed(dataFeedDto);
 		
 		// return response
