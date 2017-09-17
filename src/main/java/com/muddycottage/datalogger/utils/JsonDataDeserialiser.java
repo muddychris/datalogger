@@ -1,23 +1,34 @@
 package com.muddycottage.datalogger.utils;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 
-public class JsonDataDeserialiser extends JsonDeserializer<LocalDateTime> {
+public class JsonDataDeserialiser extends JsonDeserializer<Date> {
 
 	@Override
-	public LocalDateTime deserialize(JsonParser parser,
+	public Date deserialize(JsonParser parser,
 			DeserializationContext context) throws IOException, JsonProcessingException {
 
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-		LocalDateTime dateTime = LocalDateTime.parse(parser.getText(), formatter);
+		//DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+		//Date dateTime = Date.parse(parser.getText(), formatter);
 		
-		return dateTime ;
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		try {
+			return sdf.parse(parser.getText());
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+			return null ;
+		}
 	}
 }

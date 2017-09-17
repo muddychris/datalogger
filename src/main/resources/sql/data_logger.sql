@@ -13,3 +13,16 @@ create table data_logger (
 ) ;
 
 # add constraint to the table
+
+# mysql
+
+drop table data_logger ;
+
+create table data_logger (
+ id bigint not null primary key auto_increment,
+ capture_date_time datetime,
+ location varchar(32),
+ data_name varchar(32),
+ data_type varchar(32),
+ data_value decimal (7,2)
+) ;

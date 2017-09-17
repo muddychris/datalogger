@@ -1,29 +1,28 @@
 package com.muddycottage.datalogger.model;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import com.muddycottage.datalogger.dto.DataFeedDto;
 import com.muddycottage.datalogger.dto.DataItemDto;
 
-@SequenceGenerator(name = "MY_GENERATOR", sequenceName = "seq_data_item")
+//@SequenceGenerator(name = "MY_GENERATOR", sequenceName = "seq_data_item")
 @Table(name = "data_logger")
 @Entity
 public class DataItem {
 	
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "MY_GENERATOR")
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Id
 	private Long id ;
 	
 	@Column(name = "capture_date_time")
-	private LocalDateTime captureDateTime ;
+	private Date captureDateTime ;
 	private String location ;
 	
 	@Column(name = "data_name")
@@ -52,11 +51,11 @@ public class DataItem {
 		this.id = id;
 	}
 
-	public LocalDateTime getCaptureDateTime() {
+	public Date getCaptureDateTime() {
 		return captureDateTime;
 	}
 	
-	public void setCaptureDateTime(LocalDateTime captureDateTime) {
+	public void setCaptureDateTime(Date captureDateTime) {
 		this.captureDateTime = captureDateTime;
 	}
 	

@@ -1,7 +1,7 @@
 package com.muddycottage.datalogger.dto;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -16,7 +16,7 @@ public class DataFeedDto {
 	private final Logger logger = LoggerFactory.getLogger(DataFeedDto.class) ;
 	
 	@JsonDeserialize(using = JsonDataDeserialiser.class)
-	private LocalDateTime captureDateTime ;
+	private Date captureDateTime ;
 	
 	private String location ;
 
@@ -24,18 +24,18 @@ public class DataFeedDto {
 	
 	public DataFeedDto () {}
 
-	public DataFeedDto(LocalDateTime captureDateTime, String location, List<DataItemDto> dataList) {
+	public DataFeedDto(Date captureDateTime, String location, List<DataItemDto> dataList) {
 		super();
 		this.captureDateTime = captureDateTime;
 		this.location = location;
 		this.dataList = dataList ;
 	}
 
-	public LocalDateTime getCaptureDateTime() {
+	public Date getCaptureDateTime() {
 		return captureDateTime;
 	}
 
-	public void setCaptureDateTime(LocalDateTime captureDateTime) {
+	public void setCaptureDateTime(Date captureDateTime) {
 		this.captureDateTime = captureDateTime;
 	}
 
