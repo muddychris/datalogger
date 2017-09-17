@@ -2,6 +2,8 @@ package com.muddycottage.datalogger.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import com.muddycottage.datalogger.model.DataItem;
 import com.muddycottage.datalogger.repository.DataItemRepository;
 
 @Service
+@Transactional
 public class DataFeedService {
 
 	private final Logger logger = LoggerFactory.getLogger(DataFeedService.class) ;
@@ -21,10 +24,16 @@ public class DataFeedService {
 
 	public void processDataFeed(DataFeedDto dataFeedDto) {
 
+		List<DataItem> items = dataItemRepository.findAll();
+		if (items != null)
+			for (DataItem dataItem : items) {
+				logger.info("FOUND : {}", dataItem);
+			}
+		
 		// convert the list of data items into model items to write to the DB
 
 		List<DataItem> dataItemList = dataFeedDto.toModel();
-		if (dataItemList != null)
+		if (dataItemList != null) {
 			for (DataItem dataItem : dataItemList) {
 				// / now write via the repo
 				logger.info("DATA : {}", dataItem);
@@ -35,6 +44,9 @@ public class DataFeedService {
 					dataItemRepository.save(dataItem) ;
 				}
 			}
+			
+			dataItemRepository.flush() ;
+		}
 	}
 
 }
