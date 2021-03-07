@@ -19,6 +19,8 @@ public class DataFeedDto {
 	private Date captureDateTime ;
 	
 	private String location ;
+	
+	private String ping ;
 
 	private List<DataItemDto> dataList ;
 	
@@ -45,6 +47,20 @@ public class DataFeedDto {
 
 	public void setLocation(String location) {
 		this.location = location;
+	}
+	
+	public String getPing() {
+		return ping;
+	}
+
+	public void setPing(String ping) {
+		this.ping = ping;
+	}
+
+	public boolean isPing() { return ! "*".equals(ping) ; }
+	
+	public String getPingInfo () {
+		return String.format("%s : %s", location, captureDateTime) ;
 	}
 	
 	public List<DataItemDto> getDataList() {

@@ -1,4 +1,4 @@
-
+# oracle DDL ?
 drop sequence seq_data_item ;
 drop table data_logger ;
 

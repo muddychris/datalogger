@@ -25,8 +25,6 @@ public class DataFeedController {
 	@RequestMapping(value = "datafeed", method = RequestMethod.POST)
 	public ResponseEntity<String>  addDataFeed (@RequestBody DataFeedDto dataFeedDto) {
 
-		logger.info("datafeed called");
-		
 		dataFeedService.processDataFeed(dataFeedDto);
 		
 		// return response

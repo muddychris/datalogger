@@ -18,34 +18,33 @@ import com.muddycottage.datalogger.repository.DataItemRepository;
 public class DataFeedService {
 
 	private final Logger logger = LoggerFactory.getLogger(DataFeedService.class) ;
-	
+
 	@Autowired
 	private DataItemRepository dataItemRepository ;
 
 	public void processDataFeed(DataFeedDto dataFeedDto) {
 
-		List<DataItem> items = dataItemRepository.findAll();
-		if (items != null)
-			for (DataItem dataItem : items) {
-				logger.info("FOUND : {}", dataItem);
-			}
-		
-		// convert the list of data items into model items to write to the DB
+		if (dataFeedDto.isPing()) {
+			logger.info("PING {}", dataFeedDto.getPingInfo()); 
+		}
+		else {
+			// convert the list of data items into model items to write to the DB
 
-		List<DataItem> dataItemList = dataFeedDto.toModel();
-		if (dataItemList != null) {
-			for (DataItem dataItem : dataItemList) {
-				// / now write via the repo
-				logger.info("DATA : {}", dataItem);
-				
-				if (dataItemRepository != null)
-				{
-					logger.info("SAVE : {}", dataItem);
-					dataItemRepository.save(dataItem) ;
+			List<DataItem> dataItemList = dataFeedDto.toModel();
+			if (dataItemList != null) {
+				for (DataItem dataItem : dataItemList) {
+					// / now write via the repo
+					logger.info("DATA : {}", dataItem);
+
+					if (dataItemRepository != null)
+					{
+						logger.info("SAVE : {}", dataItem);
+						dataItemRepository.save(dataItem) ;
+					}
 				}
+
+				dataItemRepository.flush() ;
 			}
-			
-			dataItemRepository.flush() ;
 		}
 	}
 
