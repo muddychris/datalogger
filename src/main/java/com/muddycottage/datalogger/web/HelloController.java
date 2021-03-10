@@ -17,7 +17,7 @@ import com.muddycottage.datalogger.service.DataFeedService;
 public class HelloController {
 
     private static int count = 0 ;
-    private static int smsCount = 1000000 ;
+    private static int smsCount = 2000000 ;
 
     private final Logger logger = LoggerFactory.getLogger(HelloController.class) ;
 

@@ -25,6 +25,7 @@ public class DataFeedController {
 	@RequestMapping(value = "datafeed", method = RequestMethod.POST)
 	public ResponseEntity<String>  addDataFeed (@RequestBody DataFeedDto dataFeedDto) {
 
+		System.out.println("datafeed") ;
 		dataFeedService.processDataFeed(dataFeedDto);
 		
 		// return response
