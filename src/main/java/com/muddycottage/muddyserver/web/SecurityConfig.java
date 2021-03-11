@@ -1,4 +1,4 @@
-package com.muddycottage.datalogger.web;
+package com.muddycottage.muddyserver.web;
 
 /*
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;

@@ -1,4 +1,4 @@
-package com.muddycottage.datalogger.dto;
+package com.muddycottage.muddyserver.dto;
 
 public class DataItemDto {
 	private String name ;

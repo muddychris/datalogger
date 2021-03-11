@@ -1,16 +1,16 @@
-package com.muddycottage.datalogger.dto;
+package com.muddycottage.muddyserver.dto;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.muddycottage.muddyserver.model.DataItem;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.muddycottage.datalogger.model.DataItem;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.muddycottage.datalogger.utils.JsonDataDeserialiser;
+import com.muddycottage.muddyserver.utils.JsonDataDeserialiser;
 
 public class DataFeedDto {
 	private final Logger logger = LoggerFactory.getLogger(DataFeedDto.class) ;

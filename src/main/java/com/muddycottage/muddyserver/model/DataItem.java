@@ -1,4 +1,4 @@
-package com.muddycottage.datalogger.model;
+package com.muddycottage.muddyserver.model;
 
 import java.util.Date;
 
@@ -9,8 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.muddycottage.datalogger.dto.DataFeedDto;
-import com.muddycottage.datalogger.dto.DataItemDto;
+import com.muddycottage.muddyserver.dto.DataFeedDto;
+import com.muddycottage.muddyserver.dto.DataItemDto;
 
 //@SequenceGenerator(name = "MY_GENERATOR", sequenceName = "seq_data_item")
 @Table(name = "data_logger")

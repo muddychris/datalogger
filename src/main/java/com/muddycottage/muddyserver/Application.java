@@ -1,4 +1,4 @@
-package com.muddycottage.datalogger;
+package com.muddycottage.muddyserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

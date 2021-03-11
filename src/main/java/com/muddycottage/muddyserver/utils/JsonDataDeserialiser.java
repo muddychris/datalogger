@@ -1,4 +1,4 @@
-package com.muddycottage.datalogger.utils;
+package com.muddycottage.muddyserver.utils;
 
 import java.io.IOException;
 import java.text.ParseException;

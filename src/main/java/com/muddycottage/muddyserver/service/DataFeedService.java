@@ -1,17 +1,16 @@
-package com.muddycottage.datalogger.service;
+package com.muddycottage.muddyserver.service;
 
 import java.util.List;
 
 import javax.transaction.Transactional;
 
+import com.muddycottage.muddyserver.dto.DataFeedDto;
+import com.muddycottage.muddyserver.model.DataItem;
+import com.muddycottage.muddyserver.repository.DataItemRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.muddycottage.datalogger.dto.DataFeedDto;
-import com.muddycottage.datalogger.model.DataItem;
-import com.muddycottage.datalogger.repository.DataItemRepository;
 
 @Service
 @Transactional
