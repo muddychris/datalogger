@@ -1,0 +1,33 @@
+spring:
+  jpa:
+    # Use spring.jpa.properties.* for Hibernate native properties (the prefix is
+    # stripped before adding them to the entity manager)
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      #MySQL does not support sequences, so ...
+      use-new-id-generator-mappings: false
+    show-sql: true
+    ddl: auto-none
+  datasource:
+    url: jdbc:mysql://localhost:3306/datalogger
+    username: data_writer
+    password: pwd_writer
+
+server:
+  servlet:
+    contextPath: /muddyserver
+  port: 9000
+  doot:
+    key-store: classpath:keystore.p12
+    key-store-password: password
+    key-store-type: pkcs12
+    key-alias: tomcat
+    key-password: password
+
+logging:
+  level:
+    org:
+      springframework.web: INFO
+      hibernate: INFO
